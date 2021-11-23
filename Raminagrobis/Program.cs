@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace C2H5OH
+namespace Raminagrobis
 {
     class Program
     {

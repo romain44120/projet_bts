@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("C2H5OH")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Raminagrobis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("C2H5OH")]
-[assembly: System.Reflection.AssemblyTitleAttribute("C2H5OH")]
+[assembly: System.Reflection.AssemblyProductAttribute("Raminagrobis")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Raminagrobis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
