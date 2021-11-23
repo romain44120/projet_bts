@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\C2H5OH.csproj": {}
+    "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\C2H5OH.csproj": {
+    "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\C2H5OH.csproj",
-        "projectName": "C2H5OH",
-        "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\C2H5OH.csproj",
+        "projectUniqueName": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj",
+        "projectName": "Raminagrobis",
+        "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj",
         "packagesPath": "C:\\Users\\rgdma\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\obj\\",
         "projectStyle": "PackageReference",

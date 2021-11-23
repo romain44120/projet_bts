@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yHfPcju3c7TNGn23DQlQdN5/jbF1ALviT8tlOJn7AX3mDdjfDUDrUlB4bS2vI8CbvRRfXlHsUn6H0RIrWiZ5xg==",
+  "dgSpecHash": "GHuGU0UeGSEM/aX7Mp3JJVZxctYFYlh09u+luvgdnk47aKT0p4gjJiA6e1lzytOQOXZlwfovT/OJ/RGvX0up4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj",
+  "projectFilePath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis.DAL\\Raminagrobis.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rgdma\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\rgdma\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

@@ -907,9 +907,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Microsoft.Extensions.Configuration.Json >= 6.0.0",
-      "Raminagrobis.DAL >= 1.0.0",
-      "System.Data.SqlClient >= 4.8.3"
+      "Raminagrobis.DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -918,11 +916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj",
+      "projectUniqueName": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
       "projectName": "Raminagrobis",
-      "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\Raminagrobis.csproj",
+      "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
       "packagesPath": "C:\\Users\\rgdma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\C2H5OH\\obj\\",
+      "outputPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rgdma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -954,16 +952,6 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Json": {
-            "target": "Package",
-            "version": "[6.0.0, )"
-          },
-          "System.Data.SqlClient": {
-            "target": "Package",
-            "version": "[4.8.3, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
