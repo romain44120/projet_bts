@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis
 {
-    //test
+
     class Fournisseur
     {
         private string societe;

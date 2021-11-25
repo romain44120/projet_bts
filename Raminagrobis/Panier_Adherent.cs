@@ -15,18 +15,24 @@ namespace Raminagrobis
             get { return semaine; }
             private set { semaine = value; }
         }
-      
+
 
         //rajouter id adherent
+        private int id_adherent;
+        public int ID_ADHERENT
+        {
+            get { return id_adherent; }
+            private set { id_adherent = value; }
+        }
         public int ID { get; private set; }
 
-        public Panier_Adherent(string semaine)
+        public Panier_Adherent(string semaine, int id_adherent)
         {
             SEMAINE = semaine;
-
+            ID_ADHERENT = id_adherent;
         }
-        public Panier_Adherent(int id, string semaine)
-            : this(semaine)
+        public Panier_Adherent(int id, string semaine, int id_adherent)
+            : this(semaine, id_adherent)
         {
             ID = id;
         }

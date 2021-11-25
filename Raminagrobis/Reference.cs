@@ -7,29 +7,42 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Panier_Adherent_Details
+    class Reference
     {
-        //id reference
+       
 
-        private string quantite;
-        public string QUANTITE
+        private string reference;
+        public string REFERENCE
         {
-            get { return quantite; }
-            private set { quantite = value; }
+            get { return reference; }
+            private set { reference = value; }
         }
-        
-        //id panier adherent
+        private string libelle;
+        public string LIBELLE
+        {
+            get { return libelle; }
+            private set { libelle = value; }
+        }
+        private string marque;
+        public string MARQUE
+        {
+            get { return marque; }
+            private set { marque = value; }
+        }
+   
 
- 
+
+
         public int ID { get; private set; }
 
-        public Panier_Adherent_Details(string quantite)
+        public Reference(string reference, string libelle, string marque)
         {
-            QUANTITE = quantite;
-
+            REFERENCE = reference;
+            LIBELLE = libelle;
+            MARQUE = marque;
         }
-        public Panier_Adherent_Details(int id, string quantite)
-            : this(quantite)
+        public Reference(int id, string reference, string libelle, string marque)
+            : this(reference,libelle, marque)
         {
             ID = id;
         }
