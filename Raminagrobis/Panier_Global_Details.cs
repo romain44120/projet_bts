@@ -7,29 +7,41 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Panier_Adherent_Details
+    class Panier_Global_Details
     {
-        //id reference
-
-        private string quantite;
-        public string QUANTITE
+        private int id_reference;
+        public int ID_REFERENCE
         {
-            get { return quantite; }
-            private set { quantite = value; }
+            get { return id_reference; }
+            private set { id_reference = value; }
         }
-        
-        //id panier adherent
 
- 
+        private string quantite_global;
+        public string QUANTITE_GLOBAL
+        {
+            get { return quantite_global; }
+            private set { quantite_global = value; }
+        }
+
+        //id panier adherent
+        private int id_panier_adherent;
+        public int ID_PANIER_ADHERENT
+        {
+            get { return id_panier_adherent; }
+            private set { id_panier_adherent = value; }
+        }
+
         public int ID { get; private set; }
 
-        public Panier_Adherent_Details(string quantite)
+        public Panier_Global_Details(string quantite_global,int id_reference, int id_panier_adherent)
         {
-            QUANTITE = quantite;
+            QUANTITE_GLOBAL = quantite_global;
+            ID_REFERENCE = id_reference;
+            ID_PANIER_ADHERENT = id_panier_adherent;
 
         }
-        public Panier_Adherent_Details(int id, string quantite)
-            : this(quantite)
+        public Panier_Global_Details(int id, string quantite_global, int id_reference, int id_panier_adherent)
+            : this(quantite_global, id_reference, id_panier_adherent)
         {
             ID = id;
         }

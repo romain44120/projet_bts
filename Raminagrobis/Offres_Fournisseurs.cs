@@ -7,29 +7,39 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Panier_Adherent_Details
-    {
-        //id reference
-
-        private string quantite;
-        public string QUANTITE
+    class Offres_Fournisseurs {
+        //id Fournisseurs
+        private int id_fournisseurs;
+        public int ID_FOURNISSEURS
         {
-            get { return quantite; }
-            private set { quantite = value; }
+            get { return id_fournisseurs; }
+            private set { id_fournisseurs = value; }
         }
-        
-        //id panier adherent
+        private string offres;
+        public string OFFRES
+        {
+            get { return offres; }
+            private set { offres = value; }
+        }
 
- 
+        //id panier globals details
+        private int panier_globals_details;
+        public int PANIER_GLOBALS_DETAILS
+        {
+            get { return id_fournisseurs; }
+            private set { id_fournisseurs = value; }
+        }
+
         public int ID { get; private set; }
 
-        public Panier_Adherent_Details(string quantite)
+        public Offres_Fournisseurs(string offres,int id_fournisseurs, int panier_globals_details)
         {
-            QUANTITE = quantite;
-
+            OFFRES = offres;
+            ID_FOURNISSEURS = id_fournisseurs;
+            PANIER_GLOBALS_DETAILS = panier_globals_details;
         }
-        public Panier_Adherent_Details(int id, string quantite)
-            : this(quantite)
+        public Offres_Fournisseurs(int id, string offres, int id_fournisseurs, int panier_globals_details)
+            : this(offres, id_fournisseurs, panier_globals_details)
         {
             ID = id;
         }
