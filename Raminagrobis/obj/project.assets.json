@@ -911,19 +911,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rgdma\\.nuget\\packages\\": {}
+    "C:\\Users\\r0main\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
+      "projectUniqueName": "C:\\Users\\r0main\\source\\repos\\Mael190\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
       "projectName": "Raminagrobis",
-      "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
-      "packagesPath": "C:\\Users\\rgdma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\obj\\",
+      "projectPath": "C:\\Users\\r0main\\source\\repos\\Mael190\\C2H5OH\\Raminagrobis\\Raminagrobis.csproj",
+      "packagesPath": "C:\\Users\\r0main\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\r0main\\source\\repos\\Mael190\\C2H5OH\\Raminagrobis\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\rgdma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\r0main\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -937,8 +942,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis.DAL\\Raminagrobis.DAL.csproj": {
-              "projectPath": "C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis.DAL\\Raminagrobis.DAL.csproj"
+            "C:\\Users\\r0main\\source\\repos\\Mael190\\C2H5OH\\Raminagrobis.DAL\\Raminagrobis.DAL.csproj": {
+              "projectPath": "C:\\Users\\r0main\\source\\repos\\Mael190\\C2H5OH\\Raminagrobis.DAL\\Raminagrobis.DAL.csproj"
             }
           }
         }
@@ -967,7 +972,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
