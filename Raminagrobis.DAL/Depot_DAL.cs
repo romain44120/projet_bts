@@ -20,7 +20,7 @@ namespace Geometrie.DAL
         public Depot_DAL()
         {
             var builder = new ConfigurationBuilder();
-            var config = builder.AddJsonFile("appsettings.json", false, true).Build();
+            var config = builder.AddJsonFile("C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\appsettings.json", false, true).Build();
 
             ChaineDeConnexion = config.GetSection("ConnectionStrings:default").Value;
         }
