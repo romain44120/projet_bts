@@ -21,8 +21,6 @@ namespace Raminagrobis
             get { return offres; }
             private set { offres = value; }
         }
-
-    
         private int id_panier_globals_details;
         public int ID_PANIER_GLOBALS_DETAILS
         {
