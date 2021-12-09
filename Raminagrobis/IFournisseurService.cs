@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis
 {
-    class IRaminagronisService
+    public interface IFournisseurService
     {
+        public List<Fournisseur> GetAll();
+        public Fournisseur GetByID(int ID);
+        public Fournisseur Insert(Fournisseur f);
+        public Fournisseur Update(Fournisseur f);
+        public void Delete(Fournisseur f);
     }
 }
