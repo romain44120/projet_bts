@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Fournisseur
+    public class Fournisseur
     {
         private string societe;
         public string SOCIETE
@@ -52,7 +52,7 @@ namespace Raminagrobis
             get { return status; }
             private set { status = value; }
         }
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
         public Fournisseur(string societe, bool civilite, string nom, string prenom, string email, string adresse, bool status)
         {
