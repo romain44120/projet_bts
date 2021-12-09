@@ -7,7 +7,7 @@ namespace Raminagrobis
     {
         static void Main(string[] args)
         {
-            var depo = new FournisseurGlobal_DAL();
+            var depo = new FournisseurMethod_DAL();
 
             /*var f1 = new Fournisseur_DAL("societeTest", false, "Giroud", "Olivier", "olivier.giroud@gmail.com", "10 rue des avenues", false);
 

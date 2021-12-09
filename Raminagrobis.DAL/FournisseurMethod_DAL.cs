@@ -8,7 +8,7 @@ using Geometrie.DAL;
 
 namespace Raminagrobis.DAL
 {
-    public class FournisseurGlobal_DAL : Depot_DAL<Fournisseur_DAL>
+    public class FournisseurMethod_DAL : Depot_DAL<Fournisseur_DAL>
     {
         public override void Delete(Fournisseur_DAL fournisseur)
         {
