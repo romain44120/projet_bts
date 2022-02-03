@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Geometrie.DAL;
+using Raminagrobis.DAL;
 
 namespace Raminagrobis.DAL
 {
-    public class Offres_Fournisseurs_Global_Method_DAL : Depot_DAL<Offres_Fournisseurs_DAL>
+    public class Offres_Fournisseurs_Method_DAL : Depot_DAL<Offres_Fournisseurs_DAL>
     {
         public override void Delete(Offres_Fournisseurs_DAL offres_fournisseurs)
         {
@@ -56,10 +56,10 @@ namespace Raminagrobis.DAL
             CreerConnexionEtCommande();
 
             commande.CommandText = "select * from offres_fournisseurs where id=@ID";
-            commande.Parameters.Add(new SqlParameter("@ID",);
+            commande.Parameters.Add(new SqlParameter("@ID", ID));
             var reader = commande.ExecuteReader();
 
-            if (reader.Read()) ID)
+            if (reader.Read())
             {
                 var offres_fournisseurs = new Offres_Fournisseurs_DAL(
                                         reader.GetInt32(0),
@@ -81,11 +81,11 @@ namespace Raminagrobis.DAL
 
             commande.CommandText = "insert into offres_fournisseurs(offres, id_fournisseurs, id_panier_globals_details)"
                                     + " values (@offres, @id_fournisseurs,@id_panier_globals_details); select scope_identity()";
-       
+
             commande.Parameters.Add(new SqlParameter("@offres", offres_fourni.OFFRES));
             commande.Parameters.Add(new SqlParameter("@id_fournisseurs", offres_fourni.ID_FOURNISSEURS));
             commande.Parameters.Add(new SqlParameter("@id_panier_globals_details", offres_fourni.ID_PANIER_GLOBALS_DETAILS));
-      
+
 
             var ID = Convert.ToInt32((decimal)commande.ExecuteScalar());
 

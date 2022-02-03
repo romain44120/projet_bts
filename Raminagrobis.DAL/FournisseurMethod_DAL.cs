@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Geometrie.DAL;
 
 namespace Raminagrobis.DAL
 {
@@ -131,5 +130,7 @@ namespace Raminagrobis.DAL
 
             return fournisseur;
         }
+
+       
     }
 }

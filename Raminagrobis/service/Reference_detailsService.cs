@@ -9,7 +9,7 @@ namespace Raminagrobis
 {
     public class Reference_detailsService : IReference_detailsService
     {
-        private Reference_detailsMethod_DAL depot = new Reference_detailsMethod_DAL();
+        private Reference_DEtails_Method_DAL depot = new Reference_DEtails_Method_DAL();
 
         public List<Reference_details> GetAll()
         {
@@ -29,10 +29,10 @@ namespace Raminagrobis
 
         public Reference_details Insert(Reference_details f)
         {
-            var reference_details = new Reference_details_DAL(f.SOCIETE, f.ID_FOURNISSEURS, f.ID_REFERENCE);
+            var reference_details = new Reference_details_DAL( f.ID_FOURNISSEURS, f.ID_REFERENCE);
             depot.Insert(reference_details);
 
-            f.ID = reference_detailsDal.ID;
+            f.ID = reference_details.ID;
 
             return f;
         }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobis
+namespace Raminagrobis.DTO
 {
-    
-    public class Adherent
+    class Adherent_DTO
     {
         private string societe;
         public string SOCIETE
@@ -22,7 +21,7 @@ namespace Raminagrobis
             get { return civilite; }
             private set { civilite = value; }
         }
-        private string nom; 
+        private string nom;
         public string NOM
         {
             get { return nom; }
@@ -60,24 +59,8 @@ namespace Raminagrobis
             get { return dateadhesion; }
             private set { dateadhesion = value; }
         }
-        public int ID { get;  set; }
+        public int ID { get; private set; }
 
-        public Adherent(string societe, bool civilite, string nom, string prenom, string email, string adresse, DateTime dateadhesion, bool status)
-        {
-            SOCIETE = societe;
-            CIVILITE = civilite;
-            NOM = nom;
-            PRENOM = prenom;
-            EMAIL = email;
-            ADRESSE = adresse;
-            DATEADHESION = dateadhesion;
-            STATUS = status;
-        }
-        public Adherent(int id ,string societe, bool civilite, string nom, string prenom, string email, string adresse, DateTime dateadhesion, bool status)
-            :this(societe, civilite, nom, prenom, email, adresse,  dateadhesion, status)
-        {
-            ID = id;
-        }
-
+      
     }
 }

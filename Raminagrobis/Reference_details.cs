@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Reference_details
+    public class Reference_details
     {
         //id fournisseur
         private int id_fournisseurs;
@@ -26,7 +26,7 @@ namespace Raminagrobis
         }
 
 
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
         public Reference_details( int id_fournisseurs,int id_reference)
         {

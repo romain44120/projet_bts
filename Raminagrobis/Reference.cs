@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Reference
+    public class Reference
     {
-       
-
         private string reference;
         public string REFERENCE
         {
@@ -29,11 +27,7 @@ namespace Raminagrobis
             get { return marque; }
             private set { marque = value; }
         }
-   
-
-
-
-        public int ID { get; private set; }
+        public int ID { get;  set; }
 
         public Reference(string reference, string libelle, string marque)
         {

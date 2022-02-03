@@ -9,12 +9,12 @@ namespace Raminagrobis
 {
     public class Panier_Adherent_DetailsService : IPanier_Adherent_DetailsService
     {
-        private Panier_Adherent_DetailsMethod_DAL depot = new Panier_Adherent_DetailsMethod_DAL();
+        private Panier_Adherent_Details_Method_DAL depot = new Panier_Adherent_Details_Method_DAL();
 
         public List<Panier_Adherent_Details> GetAll()
         {
             var panier_adherent_details = depot.GetAll()
-                    .Select(f => new Panier_Adherent_Details(f.ID, f.ID_REFERENCE, f.QUANTITE, f.ID_PANIER_ADHERENT))
+                    .Select(f => new Panier_Adherent_Details(f.ID, f.QUANTITE, f.ID_REFERENCE, f.ID_PANIER_ADHERENT))
                     .ToList();
 
             return panier_adherent_details;
@@ -24,12 +24,12 @@ namespace Raminagrobis
         {
             var f = depot.GetByID(ID);
 
-            return new Panier_Adherent_Details(f.ID, f.ID_REFERENCE, f.QUANTITE, f.ID_PANIER_ADHERENT);
+            return new Panier_Adherent_Details(f.ID, f.QUANTITE, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
         }
 
         public Panier_Adherent_Details Insert(Panier_Adherent_Details f)
         {
-            var panier_adherent_detailsDal = new Panier_Adherent_Details(f.ID_REFERENCE, f.QUANTITE, f.ID_PANIER_ADHERENT);
+            var panier_adherent_detailsDal = new Panier_Adherent_Details_DAL(f.QUANTITE, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
             depot.Insert(panier_adherent_detailsDal);
 
             f.ID = panier_adherent_detailsDal.ID;
@@ -39,7 +39,7 @@ namespace Raminagrobis
 
         public Panier_Adherent_Details Update(Panier_Adherent_Details f)
         {
-            var panier_adherent_detailsDal = new Panier_Adherent_Details_DAL(f.ID, f.ID_REFERENCE, f.QUANTITE, f.ID_PANIER_ADHERENT);
+            var panier_adherent_detailsDal = new Panier_Adherent_Details_DAL(f.ID, f.QUANTITE, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
             depot.Update(panier_adherent_detailsDal);
 
             return f;
@@ -47,7 +47,7 @@ namespace Raminagrobis
 
         public void Delete(Panier_Adherent_Details f)
         {
-            var panier_adherent_detailsDal = new Panier_Adherent_Details_DAL(f.ID, f.ID_REFERENCE, f.QUANTITE, f.ID_PANIER_ADHERENT);
+            var panier_adherent_detailsDal = new Panier_Adherent_Details_DAL(f.ID, f.QUANTITE, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
             depot.Delete(panier_adherent_detailsDal);
         }
     }

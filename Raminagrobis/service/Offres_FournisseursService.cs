@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis
 {
-    public class Offres_FournisseursService : IOffres_FournisseursService
+    public class Offres_FournisseursService : IOffres_FournisseurService
     {
         private Offres_Fournisseurs_Method_DAL depot = new Offres_Fournisseurs_Method_DAL();
 
@@ -30,7 +30,7 @@ namespace Raminagrobis
         public Offres_Fournisseurs Insert(Offres_Fournisseurs f)
         {
             var offres_fournisseursDal = new Offres_Fournisseurs_DAL(f.ID, f.OFFRES, f.ID_FOURNISSEURS, f.ID_PANIER_GLOBALS_DETAILS);
-            depot.Insert(fournisseurDal);
+            depot.Insert(offres_fournisseursDal);
 
             f.ID = offres_fournisseursDal.ID;
 
