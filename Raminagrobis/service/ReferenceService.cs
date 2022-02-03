@@ -24,7 +24,7 @@ namespace Raminagrobis
         {
             var f = depot.GetByID(ID);
 
-            return new Reference(f.ID, f.SOCIETE, f.REFERENCE, f.LIBELLE, f.MARQUE);
+            return new Reference(f.ID, f.REFERENCE, f.LIBELLE, f.MARQUE);
         }
 
         public Reference Insert(Reference f)

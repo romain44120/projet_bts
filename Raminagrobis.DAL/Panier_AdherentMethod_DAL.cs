@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Geometrie.DAL;
+
 
 namespace Raminagrobis.DAL
 {
@@ -20,7 +20,7 @@ namespace Raminagrobis.DAL
 
             if (nombreDeLignesAffectees != 1)
             {
-                throw new Exception($"Impossible de supprimer le panier avec l'ID {pa.ID}");
+                throw new Exception($"Impossible de supprimer le panier avec l'ID {panier.ID}");
             }
 
             DetruireConnexionEtCommande();
@@ -100,7 +100,7 @@ namespace Raminagrobis.DAL
             commande.Parameters.Add(new SqlParameter("@ID", panierAdherent.ID));
             commande.Parameters.Add(new SqlParameter("@SEMAINE", panierAdherent.SEMAINE));
             commande.Parameters.Add(new SqlParameter("@ID_ADHERENTS", panierAdherent.ID_ADHERENT));
-            var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery()
+            var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery();
 
             if (nombreDeLignesAffectees != 1)
             {

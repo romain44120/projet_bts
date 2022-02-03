@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobis
+namespace Raminagrobis.DTO
 {
-
-    public class Offres_Fournisseurs {
-        //id Fournisseurs
+    class Offres_Fournisseurs_DTO
+    {
         private int id_fournisseurs;
         public int ID_FOURNISSEURS
         {
@@ -29,18 +28,5 @@ namespace Raminagrobis
         }
 
         public int ID { get; set; }
-
-        public Offres_Fournisseurs(string offres,int id_fournisseurs, int id_panier_globals_details)
-        {
-            OFFRES = offres;
-            ID_FOURNISSEURS = id_fournisseurs;
-            ID_PANIER_GLOBALS_DETAILS = id_panier_globals_details;
-        }
-        public Offres_Fournisseurs(int id, string offres, int id_fournisseurs, int id_panier_globals_details)
-            : this(offres, id_fournisseurs, id_panier_globals_details)
-        {
-            ID = id;
-        }
-
     }
 }

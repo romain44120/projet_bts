@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Panier_Global_Details
+    public class Panier_Global_Details
     {
         private int id_reference;
         public int ID_REFERENCE
@@ -31,7 +31,7 @@ namespace Raminagrobis
             private set { id_panier_adherent = value; }
         }
 
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
         public Panier_Global_Details(string quantite_global,int id_reference, int id_panier_adherent)
         {

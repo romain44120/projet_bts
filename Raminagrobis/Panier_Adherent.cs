@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Raminagrobis
 {
 
-    class Panier_Adherent
+    public class Panier_Adherent
     {
         private string semaine;
         public string SEMAINE
@@ -24,7 +24,7 @@ namespace Raminagrobis
             get { return id_adherent; }
             private set { id_adherent = value; }
         }
-        public int ID { get; private set; }
+        public int ID { get;  set; }
 
         public Panier_Adherent(string semaine, int id_adherent)
         {

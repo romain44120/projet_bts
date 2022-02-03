@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Geometrie.DAL;
 namespace Raminagrobis.DAL
 {
     public class AdherentMethod_DAL : Depot_DAL<Adherent_DAL>

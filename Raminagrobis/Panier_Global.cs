@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis
 {
-    
-    class Panier_Global
+
+    public class Panier_Global
     {
         private string semaine;
         public string SEMAINE
@@ -17,7 +17,7 @@ namespace Raminagrobis
         }
 
    
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
         public Panier_Global(string semaine)
         {

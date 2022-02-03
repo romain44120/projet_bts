@@ -9,7 +9,7 @@ namespace Raminagrobis
 {
     public class Panier_GlobalService : IPanier_GlobalService
     {
-        private Panier_GlobalMethod_DAL depot = new Panier_GlobalMethod_DAL();
+        private Panier_Global_Method_DAL depot = new Panier_Global_Method_DAL();
 
         public List<Panier_Global> GetAll()
         {
@@ -27,7 +27,7 @@ namespace Raminagrobis
             return new Panier_Global(f.ID, f.SEMAINE);
         }
 
-        public Fournisseur Insert(Fournisseur f)
+        public Panier_Global Insert(Panier_Global f)
         {
             var panier_globalDal = new Panier_Global_DAL(f.SEMAINE);
             depot.Insert(panier_globalDal);

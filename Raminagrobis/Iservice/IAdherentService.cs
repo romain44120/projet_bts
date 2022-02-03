@@ -10,8 +10,8 @@ namespace Raminagrobis
     {
         public List<Adherent> GetAll();
         public Adherent GetByID(int ID);
-        public Adherent Insert(Adherent f);
-        public Adherent Update(Adherent f);
-        public void Delete(Adherent f);
+        public Adherent Insert(Adherent a);
+        public Adherent Update(Adherent a);
+        public void Delete(Adherent a);
     }
 }

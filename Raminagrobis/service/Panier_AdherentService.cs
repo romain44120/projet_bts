@@ -9,7 +9,7 @@ namespace Raminagrobis
 {
     public class Panier_AdherentService : IPanier_AdherentService
     {
-        private Panier_Adherent_Method_DAL depot = new Panier_Adherent_Method_DAL();
+        private Panier_AdherentMethod_DAL depot = new Panier_AdherentMethod_DAL();
 
         public List<Panier_Adherent> GetAll()
         {
