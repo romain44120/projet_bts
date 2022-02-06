@@ -79,7 +79,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into references(reference, libelle, marque)"
+            commande.CommandText = "insert into  [Raminagrobis].[dbo].[references] (reference, libelle, marque)"
                                     + " values (@reference, @libelle, @marque); select scope_identity()";
 
             commande.Parameters.Add(new SqlParameter("@reference", reference.REFERENCE));
@@ -100,7 +100,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "update references set reference=@REFERENCE, libelle=@LIBELLE, marque=@MARQUE where id=@ID;";
+            commande.CommandText = "update [Raminagrobis].[dbo].[references] set reference=@REFERENCE, libelle=@LIBELLE, marque=@MARQUE where id=@ID;";
             commande.Parameters.Add(new SqlParameter("@ID", reference.ID));
             commande.Parameters.Add(new SqlParameter("@REFERENCE", reference.REFERENCE));
             commande.Parameters.Add(new SqlParameter("@LIBELLE", reference.LIBELLE));

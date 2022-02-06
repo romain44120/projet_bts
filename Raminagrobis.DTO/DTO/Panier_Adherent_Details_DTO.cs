@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis.DTO
 {
-
     public class Panier_Adherent_Details_DTO
     {
         //id reference

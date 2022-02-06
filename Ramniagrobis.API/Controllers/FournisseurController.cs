@@ -47,8 +47,8 @@ namespace Ramniagrobis.API.Controllers
             return f;
         }
 
-        [HttpGet]
-        public Fournisseur_DTO GetFournisseurByID(int id)
+        [HttpGet("{id}")]
+        public Fournisseur_DTO GetFournisseurByID([FromRoute] int id)
         {
             var f = service.GetByID(id);
 

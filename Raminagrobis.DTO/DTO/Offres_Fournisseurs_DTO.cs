@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raminagrobis.DTO
 {
-    class Offres_Fournisseurs_DTO
+    public class Offres_Fournisseurs_DTO
     {
         private int id_fournisseurs;
         public int ID_FOURNISSEURS

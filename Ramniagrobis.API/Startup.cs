@@ -34,6 +34,13 @@ namespace Ramniagrobis.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ramniagrobis.API", Version = "v1" });
             });
             services.AddSingleton(typeof(IFournisseurService), new FournisseurService());
+            services.AddSingleton(typeof(IAdherentService), new AdherentService());
+            services.AddSingleton(typeof(IReferenceService), new ReferenceService());
+            services.AddSingleton(typeof(IPanier_AdherentService), new Panier_AdherentService());
+            services.AddSingleton(typeof(IPanier_Adherent_DetailsService), new Panier_Adherent_DetailsService());
+            services.AddSingleton(typeof(IPanier_GlobalService), new Panier_GlobalService());
+            services.AddSingleton(typeof(IOffres_FournisseurService), new Offres_FournisseursService());
+            services.AddSingleton(typeof(IReference_detailsService), new Reference_detailsService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
