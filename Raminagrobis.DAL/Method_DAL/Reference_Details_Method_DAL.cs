@@ -77,10 +77,8 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into references_details(id, id_fournisseur, id_references)"
-                                    + " values (@id, @id_fournisseur, @id_references; select scope_identity()";
-
-            commande.Parameters.Add(new SqlParameter("@societe", referenceDetail.ID));
+            commande.CommandText = "insert into references_details( id_fournisseur, id_references)"
+                                    + " values (@id_fournisseur, @id_references); select scope_identity()";
             commande.Parameters.Add(new SqlParameter("@id_fournisseur", referenceDetail.ID_FOURNISSEURS));
             commande.Parameters.Add(new SqlParameter("@id_references", referenceDetail.ID_REFERENCE));
 

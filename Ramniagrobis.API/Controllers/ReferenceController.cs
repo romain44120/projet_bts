@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,8 +43,8 @@ namespace Ramniagrobis.API.Controllers
             return f;
         }
 
-        [HttpGet]
-        public Reference_DTO GetReferenceByID(int id)
+        [HttpGet("{id}")]
+        public Reference_DTO GetReferenceByID([FromRoute] int id)
         {
             var f = service.GetByID(id);
 

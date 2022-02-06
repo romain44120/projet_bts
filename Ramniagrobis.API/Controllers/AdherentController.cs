@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Raminagrobis;
 using Raminagrobis.DAL;
 using Raminagrobis.DTO;
+using Raminagrobis;
 
 namespace Ramniagrobis.API.Controllers
 {
@@ -13,7 +13,7 @@ namespace Ramniagrobis.API.Controllers
     [Route("[controller]")]
     public class AdherentController : Controller
     {
-        private IAdherentService service;
+        private Raminagrobis.IAdherentService service;
 
         public AdherentController(IAdherentService srv)
         {
@@ -47,8 +47,8 @@ namespace Ramniagrobis.API.Controllers
             return f;
         }
 
-        [HttpGet]
-        public Adherent_DTO GetAdherentByID(int id)
+        [HttpGet("{id}")]
+        public Adherent_DTO GetAdherentByID([FromRoute] int id)
         {
             var f = service.GetByID(id);
 
