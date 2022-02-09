@@ -11,7 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis.DTO", "Raminag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ramniagrobis.API", "Ramniagrobis.API\Ramniagrobis.API.csproj", "{6DCB6BAB-0D5A-4F05-B95A-0AF3BC51136A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raminagrobis1.WPF", "Raminagrobis1.WPF\Raminagrobis1.WPF.csproj", "{5BB83FAA-B4C6-41C4-8351-F2EA0A046750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis1.WPF", "Raminagrobis1.WPF\Raminagrobis1.WPF.csproj", "{5BB83FAA-B4C6-41C4-8351-F2EA0A046750}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DCB6BAB-0D5A-4F05-B95A-0AF3BC51136A} = {6DCB6BAB-0D5A-4F05-B95A-0AF3BC51136A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

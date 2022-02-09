@@ -20,7 +20,7 @@ namespace Ramniagrobis.API.Controllers
             service = srv;
         }
 
-        [HttpGet("All")]
+        [HttpGet("AllReferences")]
         public IEnumerable<Reference_DTO> GetAllReference()
         {
             return service.GetAll().Select(f => new Reference_DTO()

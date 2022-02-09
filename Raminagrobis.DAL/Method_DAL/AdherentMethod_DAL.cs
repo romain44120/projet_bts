@@ -114,7 +114,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "update fournisseurs set societe=@SOCIETE, civilite=@CIVILITE, nom=@NOM, prenom=@PRENOM, email=@EMAIL, adresse=@ADRESSE, dateAdhesion=@DATEADHESION,status=@STATUS where id=@ID;";
+            commande.CommandText = "update adherents set societe=@SOCIETE, civilite=@CIVILITE, nom=@NOM, prenom=@PRENOM, email=@EMAIL, adresse=@ADRESSE, dateAdhesion=@DATEADHESION,status=@STATUS where id=@ID;";
             commande.Parameters.Add(new SqlParameter("@ID", adherent.ID));
             commande.Parameters.Add(new SqlParameter("@SOCIETE", adherent.SOCIETE));
             commande.Parameters.Add(new SqlParameter("@CIVILITE", adherent.CIVILITE));

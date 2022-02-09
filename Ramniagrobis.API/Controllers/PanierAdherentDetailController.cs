@@ -19,7 +19,7 @@ namespace Ramniagrobis.API.Controllers
             service = srv;
         }
 
-        [HttpGet("All")]
+        [HttpGet("AllPaniersAdherent")]
         public IEnumerable<Panier_Adherent_Details_DTO> GetAllFournisseurs()
         {
             return service.GetAll().Select(p => new Panier_Adherent_Details_DTO()
