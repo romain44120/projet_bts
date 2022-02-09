@@ -20,7 +20,7 @@ namespace Ramniagrobis.API.Controllers
             service = srv;
         }
 
-        [HttpGet("All")]
+        [HttpGet("AllAdherents")]
         public IEnumerable<Adherent_DTO> GetAllAdherent()
         {
             return service.GetAll().Select(f => new Adherent_DTO()
@@ -32,6 +32,7 @@ namespace Ramniagrobis.API.Controllers
                 PRENOM = f.PRENOM,
                 EMAIL = f.EMAIL,
                 ADRESSE = f.ADRESSE,
+                DATEADHESION = f.DATEADHESION,
                 STATUS = f.STATUS,
             });
         }

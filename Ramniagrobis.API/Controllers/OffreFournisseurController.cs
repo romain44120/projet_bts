@@ -19,8 +19,8 @@ namespace Ramniagrobis.API.Controllers
             service = srv;
         }
 
-        [HttpGet("All")]
-        public IEnumerable<Offres_Fournisseurs_DTO> GetAllAdherent()
+        [HttpGet("AllOffresFournisseurs")]
+        public IEnumerable<Offres_Fournisseurs_DTO> GetAllOffresFournisseurs()
         {
             return service.GetAll().Select(f => new Offres_Fournisseurs_DTO
             {
@@ -32,7 +32,7 @@ namespace Ramniagrobis.API.Controllers
         }
 
         [HttpPost]
-        public Offres_Fournisseurs_DTO Insert(Offres_Fournisseurs_DTO f)
+        public Offres_Fournisseurs_DTO InsertOffreFournisseur(Offres_Fournisseurs_DTO f)
         {
             var f_metier = service.Insert(new Offres_Fournisseurs(f.OFFRES, f.ID_FOURNISSEURS, f.ID_PANIER_GLOBALS_DETAILS));
 
@@ -43,7 +43,7 @@ namespace Ramniagrobis.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public Offres_Fournisseurs_DTO GetAdherentByID([FromRoute] int id)
+        public Offres_Fournisseurs_DTO GetOffreFournisseurByID([FromRoute] int id)
         {
             var f = service.GetByID(id);
 
@@ -57,7 +57,7 @@ namespace Ramniagrobis.API.Controllers
         }
 
         [HttpPut]
-        public Offres_Fournisseurs_DTO PutFournisseur(Offres_Fournisseurs_DTO f)
+        public Offres_Fournisseurs_DTO PutOffreFournisseur(Offres_Fournisseurs_DTO f)
         {
             var f_metier = service.Update(new Offres_Fournisseurs(f.ID, f.OFFRES, f.ID_FOURNISSEURS, f.ID_PANIER_GLOBALS_DETAILS));
             f.ID = f_metier.ID;
@@ -68,7 +68,7 @@ namespace Ramniagrobis.API.Controllers
         }
 
         [HttpDelete]
-        public void DeleteAdherent(int id)
+        public void DeleteOffreFournisseur(int id)
         {
             var f_metier = service.GetByID(id);
 
