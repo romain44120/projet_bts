@@ -25,6 +25,19 @@ namespace Raminagrobis.DAL
 
             DetruireConnexionEtCommande();
         }
+        
+        public void DeleteByIDFournisseur(int ID)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "delete from references_details where id_fournisseur=@ID";
+            commande.Parameters.Add(new SqlParameter("@ID", ID));
+            var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery();
+
+          
+
+            DetruireConnexionEtCommande();
+        }
 
         public override List<Reference_details_DAL> GetAll()
         {

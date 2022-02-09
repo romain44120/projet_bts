@@ -13,5 +13,6 @@ namespace Raminagrobis
         public Reference Insert(Reference f);
         public Reference Update(Reference f);
         public void Delete(Reference f);
+        public List<Reference> GetByReference(string reference);
     }
 }
