@@ -41,6 +41,7 @@ namespace Ramniagrobis.API
             services.AddSingleton(typeof(IPanier_GlobalService), new Panier_GlobalService());
             services.AddSingleton(typeof(IOffres_FournisseurService), new Offres_FournisseursService());
             services.AddSingleton(typeof(IReference_detailsService), new Reference_detailsService());
+            services.AddSingleton(typeof(IPanier_Global_DetailsService), new Panier_Global_DetailsService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

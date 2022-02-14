@@ -59,6 +59,20 @@ namespace Ramniagrobis.API.Controllers
             };
         }
 
+        [HttpGet("GetByReference/{reference}")]
+        public Reference_DTO GetByReference([FromRoute] string reference)
+        {
+            var r = service.GetByReference(reference);
+
+            return new Reference_DTO()
+            {
+                ID = r[0].ID,
+                REFERENCE = r[0].REFERENCE,
+                LIBELLE = r[0].LIBELLE,
+                MARQUE = r[0].MARQUE,
+            };
+        }
+
         [HttpPut]
         public Reference_DTO PutFournisseur(Reference_DTO f)
         {
@@ -83,7 +97,7 @@ namespace Ramniagrobis.API.Controllers
         [HttpPost("ImportCSV")]
         public void ImportCSV(string[] referencesCSV, int idFournisseur)
         {
-            serviceReferenceDetail.DeleteByIDFournisseur(idFournisseur);
+            serviceReferenceDetail.DeleteByIDFournisseur(idFournisseur); //on supprime toutes les anciennes références proposés
 
             for (var i = 1; i < referencesCSV.Length - 1; i++) // on itère sur chaque ligne
             {

@@ -20,7 +20,7 @@ namespace Raminagrobis.DAL
         public Depot_DAL()
         {
             var builder = new ConfigurationBuilder();
-            var config = builder.AddJsonFile("C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\appsettings.json", false, true).Build();
+            var config = builder.AddJsonFile("C:\\Users\\rgdma\\source\\Repos\\C2H5OH\\Raminagrobis\\appsettings.json", false, true).Build(); //erreur si on ne spécifie pas le chemin d'accès même avec l'option copier à la génération du projet
 
             ChaineDeConnexion = config.GetSection("ConnectionStrings:default").Value;
         }

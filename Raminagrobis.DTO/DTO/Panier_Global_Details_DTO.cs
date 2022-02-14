@@ -16,19 +16,19 @@ namespace Raminagrobis.DTO
              set { id_reference = value; }
         }
 
-        private string quantite_global;
-        public string QUANTITE_GLOBAL
+        private int quantite_global;
+        public int QUANTITE_GLOBAL
         {
             get { return quantite_global; }
              set { quantite_global = value; }
         }
 
         //id panier adherent
-        private int id_panier_adherent;
-        public int ID_PANIER_ADHERENT
+        private int id_panier_global;
+        public int ID_PANIER_GLOBAL
         {
-            get { return id_panier_adherent; }
-             set { id_panier_adherent = value; }
+            get { return id_panier_global; }
+             set { id_panier_global = value; }
         }
 
         public int ID { get; set; }

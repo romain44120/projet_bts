@@ -16,32 +16,32 @@ namespace Raminagrobis
             private set { id_reference = value; }
         }
 
-        private string quantite_global;
-        public string QUANTITE_GLOBAL
+        private int quantite_global;
+        public int QUANTITE_GLOBAL
         {
             get { return quantite_global; }
             private set { quantite_global = value; }
         }
 
         //id panier adherent
-        private int id_panier_adherent;
-        public int ID_PANIER_ADHERENT
+        private int id_panier_global;
+        public int ID_PANIER_GLOBAL
         {
-            get { return id_panier_adherent; }
-            private set { id_panier_adherent = value; }
+            get { return id_panier_global; }
+            private set { id_panier_global = value; }
         }
 
         public int ID { get; set; }
 
-        public Panier_Global_Details(string quantite_global,int id_reference, int id_panier_adherent)
+        public Panier_Global_Details(int quantite_global,int id_reference, int id_panier_global)
         {
             QUANTITE_GLOBAL = quantite_global;
             ID_REFERENCE = id_reference;
-            ID_PANIER_ADHERENT = id_panier_adherent;
+            ID_PANIER_GLOBAL = id_panier_global;
 
         }
-        public Panier_Global_Details(int id, string quantite_global, int id_reference, int id_panier_adherent)
-            : this(quantite_global, id_reference, id_panier_adherent)
+        public Panier_Global_Details(int id, int quantite_global, int id_reference, int id_panier_global)
+            : this(quantite_global, id_reference, id_panier_global)
         {
             ID = id;
         }

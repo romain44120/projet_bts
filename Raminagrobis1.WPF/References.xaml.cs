@@ -50,9 +50,9 @@ namespace Raminagrobis1.WPF
                 var referencesCSV = File.ReadAllText(openFileDialog.FileName).Split(new[] { '\r', '\n' });
 
                 await clientApi.ImportCSVAsync(fournisseur.Id, referencesCSV);
-
             }
-           
+            else if (fournisseur == null) MessageBox.Show("Vous devez choisir un fournisseur.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
         }
     }
 }

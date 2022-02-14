@@ -30,7 +30,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select * from panier_adherent_details";
+            commande.CommandText = "select * from panier_adherents_details";
             var reader = commande.ExecuteReader();
 
             var listepanier_adherent_details = new List<Panier_Adherent_Details_DAL>();
@@ -39,8 +39,8 @@ namespace Raminagrobis.DAL
             {
                 var panier_adherent_detailsTmp = new Panier_Adherent_Details_DAL(
                                         reader.GetInt32(0),
-                                        reader.GetString(1),
                                         reader.GetInt32(2),
+                                        reader.GetInt32(1),
                                         reader.GetInt32(3)
                                        
                                         );
@@ -64,8 +64,8 @@ namespace Raminagrobis.DAL
             {
                 var panier_adherent_details = new Panier_Adherent_Details_DAL(
                                         reader.GetInt32(0),
-                                        reader.GetString(1),
                                         reader.GetInt32(2),
+                                        reader.GetInt32(1),
                                         reader.GetInt32(3));
                 return panier_adherent_details;
             }
@@ -79,12 +79,12 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into panier_adherent_details(id_reference, quantite, id_panier_adherent)"
-                                    + " values (@id_reference, @quantite, @id_panier_adherent); select scope_identity()";
+            commande.CommandText = "insert into panier_adherents_details(id_references, quantite, id_panier_adherents)"
+                                    + " values (@id_reference, @quantite, @id_panier_adherents); select scope_identity()";
 
             commande.Parameters.Add(new SqlParameter("@id_reference", fourni.ID_REFERENCE));
             commande.Parameters.Add(new SqlParameter("@quantite", fourni.QUANTITE));
-            commande.Parameters.Add(new SqlParameter("@id_panier_adherent", fourni.ID_PANIER_ADHERENT));
+            commande.Parameters.Add(new SqlParameter("@id_panier_adherents", fourni.ID_PANIER_ADHERENT));
           
 
             var ID = Convert.ToInt32((decimal)commande.ExecuteScalar());

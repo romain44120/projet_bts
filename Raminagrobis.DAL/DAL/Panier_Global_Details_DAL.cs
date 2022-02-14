@@ -10,18 +10,18 @@ namespace Raminagrobis.DAL
     public class Panier_Global_Details_DAL
     {
         public int ID { get; set; }
-        public string QUANTITE_GLOBAL { get; set; }
+        public int QUANTITE_GLOBAL { get; set; }
         public int ID_REFERENCE { get; set; }
-        public int ID_PANIER_ADHERENT { get; set; }
+        public int ID_PANIER_GLOBAL { get; set; }
     
 
-        public Panier_Global_Details_DAL(string quantite_global, int id_reference, int id_panier_adherent)
-            => (QUANTITE_GLOBAL, ID_REFERENCE, ID_PANIER_ADHERENT) = (quantite_global, id_reference, id_panier_adherent);
+        public Panier_Global_Details_DAL(int quantite_global, int id_reference, int id_panier_global)
+            => (QUANTITE_GLOBAL, ID_REFERENCE, ID_PANIER_GLOBAL) = (quantite_global, id_reference, id_panier_global);
 
 
 
-        public Panier_Global_Details_DAL(int id, string quantite_global, int id_reference, int id_panier_adherent)
-                   => (ID, QUANTITE_GLOBAL, ID_REFERENCE, ID_PANIER_ADHERENT) = (id, quantite_global, id_reference, id_panier_adherent);
+        public Panier_Global_Details_DAL(int id, int quantite_global, int id_reference, int id_panier_global)
+                   => (ID, QUANTITE_GLOBAL, ID_REFERENCE, ID_PANIER_GLOBAL) = (id, quantite_global, id_reference, id_panier_global);
 
         
 

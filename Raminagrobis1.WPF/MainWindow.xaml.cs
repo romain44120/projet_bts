@@ -40,5 +40,10 @@ namespace Raminagrobis1.WPF
         {
             Main.Content = new References();
         }
+
+        private void BtnClickPanier(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Panier();
+        }
     }
 }

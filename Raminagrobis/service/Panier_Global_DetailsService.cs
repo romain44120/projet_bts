@@ -14,7 +14,7 @@ namespace Raminagrobis
         public List<Panier_Global_Details> GetAll()
         {
             var panier_global_details = depot.GetAll()
-                    .Select(f => new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_ADHERENT))
+                    .Select(f => new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL))
                     .ToList();
 
             return panier_global_details;
@@ -24,12 +24,12 @@ namespace Raminagrobis
         {
             var f = depot.GetByID(ID);
 
-            return new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
+            return new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
         }
 
         public Panier_Global_Details Insert(Panier_Global_Details f)
         {
-            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
+            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
             depot.Insert(panier_global_detailsDal);
 
             f.ID = panier_global_detailsDal.ID;
@@ -39,7 +39,7 @@ namespace Raminagrobis
 
         public Panier_Global_Details Update(Panier_Global_Details f)
         {
-            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
+            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
             depot.Update(panier_global_detailsDal);
 
             return f;
@@ -47,7 +47,7 @@ namespace Raminagrobis
 
         public void Delete(Panier_Global_Details f)
         {
-            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_ADHERENT);
+            var panier_global_detailsDal = new Panier_Global_Details_DAL(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
             depot.Delete(panier_global_detailsDal);
         }
     }
