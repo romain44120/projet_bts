@@ -32,6 +32,7 @@ namespace Raminagrobis1.WPF
         {
             InitializeComponent();
             fecthAdherents();
+            fetchFournisseurs();
 
             semaine.Text = "Semaine N° " + (getWeek(DateTime.Now) + 1).ToString() + "-22"; 
             semaine1.Text = "Semaine N° " + (getWeek(DateTime.Now) + 1).ToString() + "-22";
@@ -124,6 +125,8 @@ namespace Raminagrobis1.WPF
             {
                 panierAdherentsDetailFiltered.AddRange(panierAdherentsDetail.Where(panier => panier.ID_PANIER_ADHERENT == panierAdherent.Id).ToList());
             }
+
+            //pour additioner les quantités
             var tmp = panierAdherentsDetailFiltered.GroupBy(i => new { i.Id, i.ID_REFERENCE }).Select(g => new
             {
                 Id = g.Key.Id,
@@ -171,16 +174,75 @@ namespace Raminagrobis1.WPF
             var allPaniersGlobaux = await clientApi.AllPanierGlobalAsync();
             var panierGlobal = allPaniersGlobaux.Last();
 
-            var panierGlobalDetail = await clientApi.PanierGlobalDetailGETAsync(panierGlobal.Id);
+            var panierGlobalDetail = await clientApi.GetGlobalDetailByPanierAsync(panierGlobal.Id);
+           
+            //on récupère les produits proposés par le fournisseur
+            Fournisseur_DTO fournisseur = (Fournisseur_DTO)listFournisseurs.SelectedItem;
+            var listReferenceDetail = await clientApi.GetReferenceDetailsByFournisseurAsync(fournisseur.Id);
 
-            
+            try
+            {
+                StreamWriter sw = new StreamWriter($"C:\\Users\\rgdma\\Desktop\\{fournisseur.Societe}_puht_vide.csv");
+                sw.Write("reference;quantite;prix unitaire HT\n");
 
-            
+                foreach (Panier_Global_Details_DTO referencePanier in panierGlobalDetail)
+                {
+                    //si la reference du panier global est proposé par le fournisseur sélectionné
+                    if (listReferenceDetail.FirstOrDefault(referenceDetail => referenceDetail.ID_REFERENCE == referencePanier.ID_REFERENCE) != null)
+                    {
+                        var reference = await clientApi.ReferenceGETAsync(referencePanier.ID_REFERENCE);
+                        sw.Write($"{reference.Reference};{referencePanier.QuantitE_GLOBAL};0\n");
+                    }
+                }
+                sw.Close();
+
+            }
+            catch (Exception)
+            { }
         }
 
-        private void btnUploadFounirsseurCart(object sender, RoutedEventArgs e)
+        private async void btnUploadFounirsseurCart(object sender, RoutedEventArgs e)
         {
+            var clientApi = new Client("https://localhost:44362/", new HttpClient());
+            Fournisseur_DTO fournisseur = (Fournisseur_DTO)listFournisseurs.SelectedItem;
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true && fournisseur != null)
+            {
+                var allPaniersGlobaux = await clientApi.AllPanierGlobalAsync();
+                var panierGlobal = allPaniersGlobaux.Last();
+                var listPanierGlobalDetail = await clientApi.GetGlobalDetailByPanierAsync(panierGlobal.Id);
+                
+                var offresFournisseurCSV = File.ReadAllText(openFileDialog.FileName).Split(new[] { '\r', '\n' });
+
+                for (var i = 1; i < offresFournisseurCSV.Length - 1; i++)
+                {
+                    var offre = offresFournisseurCSV[i].Split(";");
+
+                    try
+                    {
+                        if (offre[2] != "0")
+                        {
+                            var reference = await clientApi.GetByReferenceAsync(offre[0]);
+                            var reference_PanierGlobalDetail = listPanierGlobalDetail.FirstOrDefault(referenceDetail => referenceDetail.ID_REFERENCE == reference.Id);
+
+                            await clientApi.OffreFournisseurPOSTAsync(new Offres_Fournisseurs_DTO()
+                            {
+                                Offres = offre[2],
+                                ID_FOURNISSEURS = fournisseur.Id,
+                                ID_PANIER_GLOBALS_DETAILS = reference_PanierGlobalDetail.Id,
+                            });
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+            }
+            
+            else if (fournisseur == null) MessageBox.Show("Vous devez choisir un fournisseur.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }

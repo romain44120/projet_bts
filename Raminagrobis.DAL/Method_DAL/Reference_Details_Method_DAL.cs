@@ -32,12 +32,35 @@ namespace Raminagrobis.DAL
 
             commande.CommandText = "delete from references_details where id_fournisseur=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", ID));
-            var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery();
-
-          
 
             DetruireConnexionEtCommande();
         }
+
+        public List<Reference_details_DAL> GetByIDFournisseur(int ID)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "select * from references_details where id_fournisseur=@ID";
+            commande.Parameters.Add(new SqlParameter("@ID", ID));
+            var reader = commande.ExecuteReader();
+
+            var listeReferenceDetail = new List<Reference_details_DAL>();
+
+            while (reader.Read())
+            {
+                var referenceDetailTmp = new Reference_details_DAL(
+                                        reader.GetInt32(0),
+                                        reader.GetInt32(1),
+                                        reader.GetInt32(2)
+                                        );
+
+                listeReferenceDetail.Add(referenceDetailTmp);
+            }
+            DetruireConnexionEtCommande();
+
+            return listeReferenceDetail;
+        }
+
 
         public override List<Reference_details_DAL> GetAll()
         {
@@ -124,5 +147,7 @@ namespace Raminagrobis.DAL
 
             return referenceDetail;
         }
+
+        
     }
 }

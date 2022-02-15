@@ -19,13 +19,14 @@ namespace Raminagrobis
 
             return panier_global_details;
         }
-
+   
         public Panier_Global_Details GetByID(int ID)
         {
             var f = depot.GetByID(ID);
 
             return new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
         }
+
 
         public Panier_Global_Details Insert(Panier_Global_Details f)
         {
@@ -49,6 +50,15 @@ namespace Raminagrobis
         {
             var panier_global_detailsDal = new Panier_Global_Details_DAL(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL);
             depot.Delete(panier_global_detailsDal);
+        }
+
+        public List<Panier_Global_Details> GetByIDPanierGlobal(int ID)
+        {
+            var panier_global_details = depot.GetByIDPanierGlobal(ID)
+                    .Select(f => new Panier_Global_Details(f.ID, f.QUANTITE_GLOBAL, f.ID_REFERENCE, f.ID_PANIER_GLOBAL))
+                    .ToList();
+
+            return panier_global_details;
         }
     }
 }

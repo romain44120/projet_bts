@@ -30,6 +30,18 @@ namespace Ramniagrobis.API.Controllers
                 ID_PANIER_GLOBAL = f.ID_PANIER_GLOBAL,
             });
         }
+        [HttpGet("GetGlobalDetailByPanier")]
+        public IEnumerable<Panier_Global_Details_DTO> GetPanierGlobalDetailByPanier(int ID)
+        {
+            return service.GetByIDPanierGlobal(ID).Select(f => new Panier_Global_Details_DTO()
+            {
+                ID = f.ID,
+                ID_REFERENCE = f.ID_REFERENCE,
+                QUANTITE_GLOBAL = f.QUANTITE_GLOBAL,
+                ID_PANIER_GLOBAL = f.ID_PANIER_GLOBAL,
+            });
+        }
+
 
         [HttpPost]
         public Panier_Global_Details_DTO Insert(Panier_Global_Details_DTO f)

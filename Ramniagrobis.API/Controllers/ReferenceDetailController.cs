@@ -40,6 +40,16 @@ namespace Ramniagrobis.API.Controllers
 
             return f;
         }
+        [HttpGet("GetReferenceDetailsByFournisseur")]
+        public IEnumerable<Reference_details_DTO> GetReferenceDetailByFournisseur(int ID)
+        {
+            return service.GetByIDFournisseur(ID).Select(f => new Reference_details_DTO()
+            {
+                ID = f.ID,
+                ID_FOURNISSEURS = f.ID_FOURNISSEURS,
+                ID_REFERENCE = f.ID_REFERENCE
+            });
+        }
 
         [HttpGet("{id}")]
         public Reference_details_DTO GetAdherentByID([FromRoute] int id)
@@ -53,6 +63,7 @@ namespace Ramniagrobis.API.Controllers
                 ID_REFERENCE = f.ID_REFERENCE
             };
         }
+
 
         [HttpPut]
         public Reference_details_DTO PutFournisseur(Reference_details_DTO f)
@@ -72,5 +83,6 @@ namespace Ramniagrobis.API.Controllers
 
             service.Delete(f_metier);
         }
+
     }
 }

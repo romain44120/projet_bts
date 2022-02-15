@@ -54,5 +54,13 @@ namespace Raminagrobis
         {
             depot.DeleteByIDFournisseur(id);
         }
+        public List<Reference_details> GetByIDFournisseur(int ID)
+        {
+            var reference_details = depot.GetByIDFournisseur(ID)
+                    .Select(f => new Reference_details(f.ID, f.ID_FOURNISSEURS, f.ID_REFERENCE))
+                    .ToList();
+
+            return reference_details;
+        }
     }
 }
