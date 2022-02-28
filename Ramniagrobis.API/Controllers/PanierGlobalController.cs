@@ -70,5 +70,7 @@ namespace Ramniagrobis.API.Controllers
 
             service.Delete(f_metier);
         }
+
+
     }
 }

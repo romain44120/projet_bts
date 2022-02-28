@@ -50,5 +50,15 @@ namespace Raminagrobis
             var referenceDal = new Reference_DAL(f.ID, f.REFERENCE, f.LIBELLE, f.MARQUE);
             depot.Delete(referenceDal);
         }
+
+        public List<Reference> GetByReference(string reference)
+        {
+            var r = depot.GetByReference(reference)
+                    .Select(f => new Reference(f.ID, f.REFERENCE, f.LIBELLE, f.MARQUE))
+                    .ToList();
+
+            return r;
+
+        }
     }
 }

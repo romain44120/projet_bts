@@ -18,8 +18,8 @@ namespace Raminagrobis.DTO
         }
 
 
-        private string quantite;
-        public string QUANTITE
+        private int quantite;
+        public int QUANTITE
         {
             get { return quantite; }
              set { quantite = value; }

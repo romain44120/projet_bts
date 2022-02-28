@@ -9,16 +9,9 @@
       Title="References">
 
     <Grid Background="White">
-        <TextBlock Text="Gestion des références" HorizontalAlignment="Center" Margin="0,10,0,-10" />
-        <StackPanel Margin="10,44,10,-24">
-            <ComboBox Name="listFournisseurs" DisplayMemberPath="Societe">
-            </ComboBox>
-            <DockPanel Margin="10">
-                <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
-                    <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
-                </WrapPanel>
-                <TextBox Name="txtEditor" />
-            </DockPanel>
-        </StackPanel>
+        <TextBlock Text="Gestion des références" HorizontalAlignment="Center" Margin="0,10,0,414" />
+        <ComboBox x:Name="listFournisseurs" DisplayMemberPath="Societe" Width="92" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="363,151,0,0"/>
+        <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Content="Importer CSV" HorizontalAlignment="Left" Margin="372,282,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,41,0,380" FontWeight="Normal" ><Run Language="fr-fr" Text="Choisissez un fournisseur et importer un fichier CSV "/></TextBlock>
     </Grid>
 </Page>

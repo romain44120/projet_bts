@@ -14,7 +14,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "delete from references where id=@ID";
+            commande.CommandText = "delete from [Raminagrobis].[dbo].[references] where id=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", reference.ID));
             var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery();
 
@@ -30,7 +30,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select * from references";
+            commande.CommandText = "select * from  [Raminagrobis].[dbo].[references]";
             var reader = commande.ExecuteReader();
 
             var listReferences = new List<Reference_DAL>();
@@ -55,7 +55,7 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select * from references where id=@ID";
+            commande.CommandText = "select * from  [Raminagrobis].[dbo].[references] where id=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", ID));
             var reader = commande.ExecuteReader();
 
@@ -116,5 +116,34 @@ namespace Raminagrobis.DAL
 
             return reference;
         }
+
+        public List<Reference_DAL> GetByReference(string reference)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "select * from  [Raminagrobis].[dbo].[references] where reference=@REFERENCE";
+            commande.Parameters.Add(new SqlParameter("@REFERENCE", reference));
+            var reader = commande.ExecuteReader();
+
+            var listReferences = new List<Reference_DAL>();
+
+            while (reader.Read())
+            {
+                var referenceTmp = new Reference_DAL(
+                                        reader.GetInt32(0),
+                                        reader.GetString(1),
+                                        reader.GetString(2),
+                                        reader.GetString(3)
+                                        );
+
+                listReferences.Add(referenceTmp);
+            }
+           
+
+            DetruireConnexionEtCommande();
+
+            return listReferences;
+        }
+
     }
 }

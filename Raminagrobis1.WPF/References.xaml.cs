@@ -38,11 +38,21 @@ namespace Raminagrobis1.WPF
             listFournisseurs.ItemsSource = fournisseurs;
         }
 
-        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        private async void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
+            Fournisseur_DTO fournisseur = (Fournisseur_DTO)listFournisseurs.SelectedItem;
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            if (openFileDialog.ShowDialog() == true && fournisseur != null)
+            {
+                var clientApi = new Client("https://localhost:44362/", new HttpClient());
+
+                var referencesCSV = File.ReadAllText(openFileDialog.FileName).Split(new[] { '\r', '\n' });
+
+                await clientApi.ImportCSVAsync(fournisseur.Id, referencesCSV);
+            }
+            else if (fournisseur == null) MessageBox.Show("Vous devez choisir un fournisseur.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
         }
     }
 }

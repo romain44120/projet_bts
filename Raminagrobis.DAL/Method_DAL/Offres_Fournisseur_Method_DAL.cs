@@ -79,10 +79,10 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into offres_fournisseurs(offres, id_fournisseurs, id_panier_globals_details)"
-                                    + " values (@offres, @id_fournisseurs,@id_panier_globals_details); select scope_identity()";
+            commande.CommandText = "insert into offres_fournisseurs(offre, id_fournisseurs, id_panier_global_details)"
+                                    + " values (@offre, @id_fournisseurs,@id_panier_globals_details); select scope_identity()";
 
-            commande.Parameters.Add(new SqlParameter("@offres", offres_fourni.OFFRES));
+            commande.Parameters.Add(new SqlParameter("@offre", offres_fourni.OFFRES));
             commande.Parameters.Add(new SqlParameter("@id_fournisseurs", offres_fourni.ID_FOURNISSEURS));
             commande.Parameters.Add(new SqlParameter("@id_panier_globals_details", offres_fourni.ID_PANIER_GLOBALS_DETAILS));
 

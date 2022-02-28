@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" >
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" >
             <Button Content="Adhérents" MinWidth="100" Click="BtnClickAdherents" Background="White" />
             <Button Content="Fournisseurs" MinWidth="100" Click="BtnClickFournisseurs" Background="White" />
             <Button Content="Reférences" MinWidth="100" Click="BtnClickReferences" Background="White" />
+            <Button Content="Panier" MinWidth="100" Click="BtnClickPanier" Background="White" />
         </StackPanel>
         <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>

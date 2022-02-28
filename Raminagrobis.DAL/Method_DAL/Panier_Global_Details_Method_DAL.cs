@@ -39,8 +39,33 @@ namespace Raminagrobis.DAL
             {
                 var panier_global_detailsTmp = new Panier_Global_Details_DAL(
                                        reader.GetInt32(0),
-                                        reader.GetString(1),
+                                        reader.GetInt32(1),
                                         reader.GetInt32(2),
+                                        reader.GetInt32(3)
+                                        );
+
+                listepanier_global_details.Add(panier_global_detailsTmp);
+            }
+            DetruireConnexionEtCommande();
+
+            return listepanier_global_details;
+        }
+        public List<Panier_Global_Details_DAL> GetByIDPanierGlobal(int ID)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "select * from panier_global_details where id_panier_global=@ID";
+            commande.Parameters.Add(new SqlParameter("@ID", ID));
+            var reader = commande.ExecuteReader();
+
+            var listepanier_global_details = new List<Panier_Global_Details_DAL>();
+
+            while (reader.Read())
+            {
+                var panier_global_detailsTmp = new Panier_Global_Details_DAL(
+                                       reader.GetInt32(0),
+                                        reader.GetInt32(2),
+                                        reader.GetInt32(1),
                                         reader.GetInt32(3)
                                         );
 
@@ -63,7 +88,7 @@ namespace Raminagrobis.DAL
             {
                 var panier_global_details = new Panier_Global_Details_DAL(
                                         reader.GetInt32(0),
-                                        reader.GetString(1),
+                                        reader.GetInt32(1),
                                         reader.GetInt32(2),
                                         reader.GetInt32(3)
                                      );
@@ -79,12 +104,12 @@ namespace Raminagrobis.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "insert into panier_global_details(quantite_global, id_reference,id_panier_adherent)"
-                                    + " values (@societe, @civilite, @nom); select scope_identity()";
+            commande.CommandText = "insert into panier_global_details(quantite_global, id_reference,id_panier_global)"
+                                    + " values (@quantite_global, @id_reference, @id_panier_global); select scope_identity()";
 
             commande.Parameters.Add(new SqlParameter("@quantite_global", panier.QUANTITE_GLOBAL));
             commande.Parameters.Add(new SqlParameter("@id_reference", panier.ID_REFERENCE));
-            commande.Parameters.Add(new SqlParameter("@id_panier_adherent", panier.ID_PANIER_ADHERENT));
+            commande.Parameters.Add(new SqlParameter("@id_panier_global", panier.ID_PANIER_GLOBAL));
 
 
 
@@ -106,7 +131,7 @@ namespace Raminagrobis.DAL
             commande.Parameters.Add(new SqlParameter("@ID", panier.ID));
             commande.Parameters.Add(new SqlParameter("@QUANTITE_GLOBAL", panier.QUANTITE_GLOBAL));
             commande.Parameters.Add(new SqlParameter("@ID_REFERENCE", panier.ID_REFERENCE));
-            commande.Parameters.Add(new SqlParameter("@ID_PANIER_ADHERENT", panier.ID_PANIER_ADHERENT));
+            commande.Parameters.Add(new SqlParameter("@ID_PANIER_ADHERENT", panier.ID_PANIER_GLOBAL));
     
             var nombreDeLignesAffectees = (int)commande.ExecuteNonQuery();
 

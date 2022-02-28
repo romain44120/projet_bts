@@ -14,10 +14,12 @@ namespace Ramniagrobis.API.Controllers
     public class ReferenceController : Controller
     {
         private IReferenceService service;
+        private IReference_detailsService serviceReferenceDetail;
 
-        public ReferenceController(IReferenceService srv)
+        public ReferenceController(IReferenceService srv, IReference_detailsService srvRefDetail)
         {
             service = srv;
+            serviceReferenceDetail = srvRefDetail;
         }
 
         [HttpGet("AllReferences")]
@@ -57,6 +59,20 @@ namespace Ramniagrobis.API.Controllers
             };
         }
 
+        [HttpGet("GetByReference/{reference}")]
+        public Reference_DTO GetByReference([FromRoute] string reference)
+        {
+            var r = service.GetByReference(reference);
+
+            return new Reference_DTO()
+            {
+                ID = r[0].ID,
+                REFERENCE = r[0].REFERENCE,
+                LIBELLE = r[0].LIBELLE,
+                MARQUE = r[0].MARQUE,
+            };
+        }
+
         [HttpPut]
         public Reference_DTO PutFournisseur(Reference_DTO f)
         {
@@ -76,6 +92,29 @@ namespace Ramniagrobis.API.Controllers
             var f_metier = service.GetByID(id);
 
             service.Delete(f_metier);
+        }
+
+        [HttpPost("ImportCSV")]
+        public void ImportCSV(string[] referencesCSV, int idFournisseur)
+        {
+            serviceReferenceDetail.DeleteByIDFournisseur(idFournisseur); //on supprime toutes les anciennes références proposés
+
+            for (var i = 1; i < referencesCSV.Length - 1; i++) // on itère sur chaque ligne
+            {
+                var referenceCSV = referencesCSV[i].Split(";"); //on split la ligne en fonction des ;
+
+                var referenceBDD = service.GetByReference(referenceCSV[0]);
+
+                if (referenceBDD.Count > 0) //si la référence existe déjà en base de donnée
+                {
+                    serviceReferenceDetail.Insert(new Reference_details(idFournisseur, referenceBDD[0].ID));
+                }
+                else //si la référence n'existe pas en base de donnée
+                {
+                    var referenceTmp = service.Insert(new Reference(referenceCSV[0], referenceCSV[1], referenceCSV[2]));
+                    serviceReferenceDetail.Insert(new Reference_details(idFournisseur, referenceTmp.ID));
+                }
+            }
         }
     }
 }
