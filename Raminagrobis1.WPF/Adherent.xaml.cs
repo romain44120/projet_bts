@@ -68,7 +68,7 @@ namespace Raminagrobis1.WPF
                 Adresse = inputAddress.Text,
                 Societe = inputCompany.Text,
                 Email = inputEmail.Text,
-                Civilite = inputCivility.IsEnabled,
+                Civilite = false,
                 Status = inputActive.IsEnabled,
                 Dateadhesion = DateTime.Now
             };

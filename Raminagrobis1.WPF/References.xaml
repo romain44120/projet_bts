@@ -10,8 +10,10 @@
 
     <Grid Background="White">
         <TextBlock Text="Gestion des références" HorizontalAlignment="Center" Margin="0,10,0,414" />
+        <TextBlock Text="choix d'un fournisseur :" HorizontalAlignment="Left" Margin="228,151,0,273" />
+        <TextBlock Text="choix du csv :" HorizontalAlignment="Left" Margin="280,197,0,227" />
         <ComboBox x:Name="listFournisseurs" DisplayMemberPath="Societe" Width="92" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="363,151,0,0"/>
-        <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Content="Importer CSV" HorizontalAlignment="Left" Margin="372,282,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Content="Importer CSV" HorizontalAlignment="Left" Margin="372,195,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,41,0,380" FontWeight="Normal" ><Run Language="fr-fr" Text="Choisissez un fournisseur et importer un fichier CSV "/></TextBlock>
     </Grid>
 </Page>

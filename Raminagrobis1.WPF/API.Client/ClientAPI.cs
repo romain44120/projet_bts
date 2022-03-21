@@ -3945,8 +3945,8 @@ namespace Raminagrobis.API.Client
         [Newtonsoft.Json.JsonProperty("iD_FOURNISSEURS", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ID_FOURNISSEURS { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("offres", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Offres { get; set; }
+        [Newtonsoft.Json.JsonProperty("offres", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public float Offres { get; set; }
 
         [Newtonsoft.Json.JsonProperty("iD_PANIER_GLOBALS_DETAILS", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ID_PANIER_GLOBALS_DETAILS { get; set; }

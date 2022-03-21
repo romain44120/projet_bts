@@ -31,9 +31,7 @@
             <TextBox x:Name="inputAddress" HorizontalAlignment="Left" Margin="366,168,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="262,193,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-fr" Text="Société"/></TextBlock>
             <TextBox x:Name="inputCompany" HorizontalAlignment="Left" Margin="223,214,0,0" Grid.Row="1"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-            <TextBlock HorizontalAlignment="Left" Margin="433,193,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-fr" Text="Activé"/></TextBlock>
-            <CheckBox x:Name="inputCivility" Content="" HorizontalAlignment="Left" Margin="440,216,0,0" Grid.Row="1" VerticalAlignment="Top" Width="18"/>
-            <TextBlock HorizontalAlignment="Left" Margin="375,193,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="42"><Run Language="fr-fr" Text="Femme"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="380,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-fr" Text="Activé"/></TextBlock>
             <CheckBox x:Name="inputActive" Content="" HorizontalAlignment="Left" Margin="387,216,0,0" Grid.Row="1" VerticalAlignment="Top" Width="18"/>
             <Button Content="Créer" Width="100" HorizontalAlignment="Left" Margin="300,236,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="285,72,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontWeight="Bold" FontSize="14"><Run Text="Ajouter "/><Run Language="fr-fr" Text="un adhérent"/></TextBlock>

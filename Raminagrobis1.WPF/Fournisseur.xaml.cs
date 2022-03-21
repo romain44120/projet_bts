@@ -68,9 +68,10 @@ namespace Raminagrobis1.WPF
                 Adresse = inputAddress.Text,
                 Societe = inputCompany.Text,
                 Email = inputEmail.Text,
-                Civilite = inputCivility.IsEnabled,
-                Status = inputActive.IsEnabled,
+                Civilite = false,
+                Status = false,
             };
+
 
             clientApi.FournisseurPOSTAsync(fournisseur);
         }
